@@ -5,6 +5,15 @@ PyContracts is a Python package that allows to declare constraints on function p
 return values. It supports a basic type system, variables binding, arithmetic constraints, and
 has several specialized contracts (notably for Numpy arrays). 
 
+To install it locally, use::
+
+    python3 setup.py sdist
+    pip install dist/pycontracts-2.0.1.tar.gz
+
+To test it, you can run these demo test files::
+
+    python demos/custom_classes.py
+    python demos/custom_conds_in_docstrings.py
 
 As a quick intro, please see `this presentation about PyContracts`_.
 
