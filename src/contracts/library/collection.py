@@ -1,4 +1,5 @@
 import collections
+import collections.abc
 
 from ..interface import Contract, ContractNotRespected
 from ..syntax import (add_contract, W, contract_expression, O, S, add_keyword,
@@ -22,7 +23,7 @@ class Collection(Contract):
                 self.__collection_types = collections.Collection
             except:
                 # python 2
-                self.__collection_types = (collections.Sequence, collections.Set, collections.Mapping, collections.deque,)
+                self.__collection_types = (collections.abc.Sequence, collections.abc.Set, collections.abc.Mapping, collections.deque,)
 
     def check_contract(self, context, value, silent):
         if not isinstance(value, self.__collection_types):

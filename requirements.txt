@@ -1,5 +1,5 @@
-pyparsing==2.2.2
-decorator==4.0.10
-six==1.10.0
-future
-numpy<1.16
+pyparsing==3.2.3
+decorator==5.2.1
+six==1.17.0
+future==1.0.0
+numpy==2.2.6

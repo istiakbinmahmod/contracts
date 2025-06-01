@@ -1,10 +1,8 @@
 import sys
-from inspect import ArgSpec
-
 import six
 
 if sys.version_info[0] >= 3:  # pragma: no cover
-    from inspect import getfullargspec
+    from inspect import getfullargspec, FullArgSpec
     unicode = str
 
 else:  # pragma: no cover
@@ -26,11 +24,10 @@ else:  # pragma: no cover
             #     instancemethod objects also.
             x = _getargspec(function.im_func)
             new_args = x.args[1:]
-            spec = ArgSpec(args=new_args, varargs=x.varargs,
-                           keywords=x.keywords, defaults=x.defaults)
+            spec = FullArgSpec(args=new_args, varargs=x.varargs,
+                               varkw=x.keywords, defaults=x.defaults,
+                               kwonlyargs=[], kwonlydefaults=None, annotations={})
             return spec
-
-        # print 'calling normal %s' % function
         return _getargspec(function)
 
     def getfullargspec(function):
