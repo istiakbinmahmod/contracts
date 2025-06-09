@@ -36,10 +36,10 @@ def get_version(filename):
 
 version = get_version(filename='src/contracts/__init__.py')
 
-setup(name='PyContracts',
+setup(name='PyContracts3',
       author="Andrea Censi",
       author_email="censi@mit.edu",
-      url='http://andreacensi.github.com/contracts/',
+      url='https://github.com/istiakbinmahmod/contracts/',
 
       description=description,
       long_description=long_description,
